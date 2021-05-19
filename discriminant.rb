@@ -1,5 +1,5 @@
 puts "Hey! This program will help you calculate the discriminant and roots of the equation.
-Enter the values ​​of the coefficients"
+Enter the values ​​of the coefficients!"
 
 a = gets.chomp.to_i
 b = gets.chomp.to_i
