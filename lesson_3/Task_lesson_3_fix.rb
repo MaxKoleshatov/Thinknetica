@@ -1,37 +1,39 @@
 class Station
-    
+
+    attr_reader :trains
+
     def initialize(name)
         @name = name
-        @train = []
+        @trains = []
     end
 
 
    def add_train(train)
-        @train << train
+        @trains << train
    end
 
-
-   def train_in_station
-    @train
-   end
-
-
+  
    def train_by_type(type)
     @train.select {|x| puts x.type == type}
    end
 
+
    def start(train)
-    @train.delete(train)
+    @trains.delete(train)
    end
+
 end
 
 
 class Route
+
+    attr_reader :stations
+
     def initialize(starting_station, end_station)
         @starting_station = starting_station
         @end_station = end_station
         @intermediate_stations = []
-        @station = [@starting_station, @end_station]
+        @stations = [@starting_station, @end_station]
     end
 
     def add_station(name)
@@ -40,12 +42,10 @@ class Route
     end
 
     def delete_stations(name)
-        @station.delete(name)
+        @stations.delete(name)
     end
 
-    def station
-        @station
-    end
+   
 end
 
 
@@ -133,9 +133,8 @@ class Train
     end
 end
 
-
-
 end
 
-
-
+st_1 = Station.new("x")
+st_1.add_train(44)
+p st_1.trains
